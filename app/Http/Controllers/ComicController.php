@@ -15,6 +15,9 @@ class ComicController extends Controller
     public function index()
     {
         //
+        $comics = config('data.comics');
+        dd($comics);
+        
     }
 
     /**
