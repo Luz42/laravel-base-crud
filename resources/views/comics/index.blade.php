@@ -9,7 +9,8 @@
 <body>
     @foreach ($comics as $comic)
         <div>
-            {{$comic['title']}}
+            <h4>{{$comic['title']}}</h4>
+            <a href="{{ route('comics.show', $comic->id) }}">Dettagli</a>
         </div>
     @endforeach
 </body>
