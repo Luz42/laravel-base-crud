@@ -14,10 +14,13 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
-        $comics = config('data.comics');
-        dd($comics);
-        
+        // visualizzazione dei dati tramite file
+        //$comics = config('data.comics');
+        //dd($comics);
+     
+        // visualizzazione dei dati tramite database
+        $comics = Comic::all();
+        return view('comics.index', compact('comics'));
     }
 
     /**
