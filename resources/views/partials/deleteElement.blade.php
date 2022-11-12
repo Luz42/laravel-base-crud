@@ -3,5 +3,5 @@
         @csrf
         @method('DELETE')
     </form>
-    <button onclick="sayHello({{$comic->id}})">Rimuovi</button>
+    <button onclick="askConfirm({{$comic->id}})">Rimuovi</button>
 </div>    
