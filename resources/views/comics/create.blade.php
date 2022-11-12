@@ -24,7 +24,7 @@
 
         <div>
             <label for="price">Prezzo:</label>
-            <input type="number" name='price' min='0' step='0.01' max='9999.99' required>
+            <input type="number" name='price' min='0' step='.01' max='9999.99' required>
         </div>
 
         <div>
