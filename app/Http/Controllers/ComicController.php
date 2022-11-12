@@ -105,7 +105,15 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        // la variabile request estrapola tutti i valori del form presenti in EDIT
+        // con il metodo all() si accede ai valori
+        $data = $request->all();
+
+        //con il metodo update(), viene aggiornato l'elemento con i valori ricevuti dal form
+        $comic->update($data);
+
+        //reindirizzato nell'elemento modificato
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
