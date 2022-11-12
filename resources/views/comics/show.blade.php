@@ -8,10 +8,13 @@
 <ul>
     <li><h4>{{$comic['title']}}</h4></li>
     <li><p>{{$comic['description']}}</p></li>
-    <li><img src="{{$comic['thumb']}}" alt="Immagine di:{{$comic['title']}}"></li>
+    <li><img style='width:250px' src="{{$comic['thumb']}}" alt="Immagine di:{{$comic['title']}}"></li>
     <li><p>{{$comic['price']}}</p></li>
     <li><p>{{$comic['series']}}</p></li>
     <li><p>{{$comic['sale_date']}}</p></li>
     <li><p>{{$comic['type']}}</p></li>
-</ul>    
+</ul>   
+<div>
+    <a href="{{route('comics.index')}}">Home</a>
+</div> 
 @endsection

@@ -42,7 +42,28 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // la variabile request estrapola tutti i valori del form presenti in CREATE
+        // con il metodo all() si accede ai valori
+        $data = $request->all();
+
+        //viene creata una nuova istanza del modello
+        $newComic =  new Comic();
+
+        //vengono associati i valori dell'istanza generata con quelli ricevuti dal form
+        $newComic->title = $data['title'];
+        $newComic->description = $data['description'];
+        $newComic->thumb = $data['thumb'];
+        $newComic->price = $data['price'];
+        $newComic->series = $data['series'];
+        $newComic->sale_date = $data['sale_date'];
+        $newComic->type = $data['type'];
+        
+        //la nuova istanza viene salvata
+        $newComic->save();
+
+        //si reindirizza la visualizzazione perchè la rotta con metodo POST serve per salvare i dati e non per leggerli
+        return redirect()->route('comics.show', $newComic->id);
+
     }
 
     /**

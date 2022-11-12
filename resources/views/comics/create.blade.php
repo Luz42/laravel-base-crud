@@ -6,7 +6,7 @@
 
 @section('content')
     <form action="{{route('comics.store')}}" method="post">
-
+        @csrf
         <div>
             <label for="title">Titolo:</label>
             <input type="text" name="title" required maxlength="50">
@@ -19,7 +19,7 @@
 
         <div>
             <label for="thumb">Url dell'immagine:</label>
-            <input type="text" name="thumb" required>
+            <input type="url" pattern="https://.*" name="thumb" required>
         </div>
 
         <div>
