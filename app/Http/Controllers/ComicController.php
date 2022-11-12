@@ -48,8 +48,9 @@ class ComicController extends Controller
 
         //viene creata una nuova istanza del modello
         $newComic =  new Comic();
-
+    
         //vengono associati i valori dell'istanza generata con quelli ricevuti dal form
+        /*
         $newComic->title = $data['title'];
         $newComic->description = $data['description'];
         $newComic->thumb = $data['thumb'];
@@ -57,7 +58,12 @@ class ComicController extends Controller
         $newComic->series = $data['series'];
         $newComic->sale_date = $data['sale_date'];
         $newComic->type = $data['type'];
-        
+        */
+
+        //i valori dichiarati nel MODELLO da associare, vengono abbinati tramite la funzione fill() con i dati ricevuti dal FORM
+        $newComic->fill($data);
+
+
         //la nuova istanza viene salvata
         $newComic->save();
 
