@@ -13,7 +13,14 @@
     <li><p>{{$comic['series']}}</p></li>
     <li><p>{{$comic['sale_date']}}</p></li>
     <li><p>{{$comic['type']}}</p></li>
-</ul>   
+</ul>
+<div>
+    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="ELIMINA">
+    </form>
+</div>    
 <div>
     <a href="{{route('comics.index')}}">Home</a>
 </div> 

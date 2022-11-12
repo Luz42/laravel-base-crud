@@ -30,7 +30,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        //riporta ad una view contenente il form da compilare che successivamente verra gestito dalla route STORE
         return view('comics.create');
     }
 
@@ -115,6 +115,10 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        //elimina l'elemento che viene inviato in questa rotta
+        $comic->delete();
+
+        //reindirizza nella pagina principale
+        return redirect()->route('comics.index');
     }
 }
