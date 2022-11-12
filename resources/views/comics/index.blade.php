@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+
+    <div>
+        <a href="{{route('comics.create')}}">Aggiungi un nuovo fumetto!</a>
+    </div>
     @foreach ($comics as $comic)
         <div>
             <h4>{{$comic['title']}}</h4>
