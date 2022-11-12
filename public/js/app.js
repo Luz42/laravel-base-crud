@@ -19427,7 +19427,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log('JS OK!');
+window.sayHello = function (id) {
+  if (confirm('Eliminare l\elemento?')) {
+    document.getElementById('deleteElement' + id).submit();
+  }
+};
 
 /***/ }),
 
