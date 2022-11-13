@@ -62,8 +62,6 @@ class ComicController extends Controller
             'date'=> 'Inserire una data',
             'numeric'=> ':attribute deve essere un numero',
             'between'=> ':attribute deve essere compreso tra :min e :max'
-
-
         ]);
 
         // la variabile request estrapola tutti i valori del form presenti in CREATE
@@ -129,6 +127,27 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+            "title"=>'required|max:50',
+            "description"=>'required',
+            "thumb"=>'required|url',
+            "price"=>'required|numeric|between:0,9999.99',
+            "series"=>'required|max:50',
+            "sale_date"=>'required|date',
+            "type"=>'required|max:20'
+        ],[
+            //è possibile customizzare nel dettaglio, il messaggio
+            // 'title.required'=>'Il titolo è obbligatorio',
+            // è possibile utilizzare :attribute & :key
+            
+            'required'=>':attribute è obbligatorio',
+            'max'=> ':attribute non può avere più di :max caratteri',
+            'url'=> 'Inserire un formato corretto',
+            'date'=> 'Inserire una data',
+            'numeric'=> ':attribute deve essere un numero',
+            'between'=> ':attribute deve essere compreso tra :min e :max'
+        ]);
+
         // la variabile request estrapola tutti i valori del form presenti in EDIT
         // con il metodo all() si accede ai valori
         $data = $request->all();
