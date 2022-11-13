@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    Add New Comic
+    {{__('Add New Comic')}}
 @endsection
 
 @section('content')
@@ -63,7 +63,7 @@
             @enderror
         </div>
 
-        <input type="submit" value="Aggiungi">
+        <input type="submit" value="{{__('Aggiungi')}}">
 
     </form>
 
@@ -78,6 +78,6 @@
     @endif --}}
 
     <div>
-        <a href="{{route('comics.index')}}">Back</a>
+        <a href="{{route('comics.index')}}">{{__('Back')}}</a>
     </div>
 @endsection

@@ -17,9 +17,9 @@
 
 @include('partials.deleteElement')
 
-<a href="{{route('comics.edit', $comic->id)}}">Aggiorna</a>
+<a href="{{route('comics.edit', $comic->id)}}">{{__('Aggiorna')}}</a>
 
 <div>
-    <a href="{{route('comics.index')}}">Home</a>
+    <a href="{{route('comics.index')}}">{{__('Home')}}</a>
 </div> 
 @endsection
