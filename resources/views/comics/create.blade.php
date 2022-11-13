@@ -9,7 +9,7 @@
         @csrf
         <div>
             <label for="title">Titolo:</label>
-            <input @error('title') class="is-invalid" @enderror type="text" name="title"  maxlength="50">
+            <input @error('title') class="is-invalid" @enderror type="text" name="title"  maxlength="50" value="{{old('title', '')}}" required>
             @error('title')
                 <span>{{$message}}</span>
             @enderror
@@ -17,7 +17,7 @@
 
         <div>
             <label for="description">Descrizione:</label>
-            <textarea @error('description') class="is-invalid" @enderror name="description" cols="20" rows="1" ></textarea>
+            <textarea @error('description') class="is-invalid" @enderror name="description" cols="20" rows="1" required>{{old('description', '')}}</textarea>
             @error('description')
                 <span>{{$message}}</span>
             @enderror
@@ -25,7 +25,7 @@
 
         <div>
             <label for="thumb">Url dell'immagine:</label>
-            <input @error('thumb') class="is-invalid" @enderror type="url" pattern="https://.*" name="thumb" >
+            <input @error('thumb') class="is-invalid" @enderror type="url" pattern="https://.*" name="thumb" value="{{old('thumb', '')}}" required>
             @error('thumb')
                 <span>{{$message}}</span>
             @enderror
@@ -33,7 +33,7 @@
 
         <div>
             <label for="price">Prezzo:</label>
-            <input @error('price') class="is-invalid" @enderror type="number" name='price' min='0' step='.01' max='9999.99' >
+            <input @error('price') class="is-invalid" @enderror type="number" name='price' min='0' step='.01' max='9999.99' value="{{old('price', '')}}" required>
             @error('price')
                 <span>{{$message}}</span>
             @enderror
@@ -41,7 +41,7 @@
 
         <div>
             <label for="series">Serie:</label>
-            <input @error('series') class="is-invalid" @enderror type="text" name="series"  maxlength="50">
+            <input @error('series') class="is-invalid" @enderror type="text" name="series"  maxlength="50" value="{{old('series', '')}}" required>
             @error('series')
                 <span>{{$message}}</span>
             @enderror
@@ -49,7 +49,7 @@
 
         <div>
             <label for="sale_date">Data della vendita:</label>
-            <input @error('sale_date') class="is-invalid" @enderror type="date" name="sale_date" >
+            <input @error('sale_date') class="is-invalid" @enderror type="date" name="sale_date" value="{{old('sale_date', '')}}" required>
             @error('sale_date')
                 <span>{{$message}}</span>
             @enderror
@@ -57,7 +57,7 @@
 
         <div>
             <label for="type">Genere:</label>
-            <input @error('type') class="is-invalid" @enderror type="text" name="type"  maxlength="20">
+            <input @error('type') class="is-invalid" @enderror type="text" name="type"  maxlength="20" value="{{old('type', '')}}" required>
             @error('type')
                 <span>{{$message}}</span>
             @enderror
